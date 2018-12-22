@@ -53,7 +53,7 @@ const makeMiddleEarth = () => {
   // 2. append the section to the body of the DOM.
   $('body').append($section);
   // 3. use a for loop to iterate over the lands array that does the following:
-  for (i = 0; i < lands.length; i++) {
+  for (let i = 0; i < lands.length; i++) {
     //   3a. creates an article tag (there should be one for each land when the loop is done)
     const $article = $('<article/>', {
       id: lands[i]
@@ -81,16 +81,18 @@ const makeHobbits = () => {
   console.log('Make hobbits');
 
   // 1. display an unordered list of the hobbits in the shire.
-  const $ul = $("<ul/>")
+  const $ul = $("<ul/>", {
+    class: "theShire"
+  })
   $('article#The-Shire').append($ul);
   // 2. give each hobbit a class of "hobbit"
-  for (i = 0; i < hobbits.length; i++) {
+  for (let i = 0; i < hobbits.length; i++) {
     // hint: create a 'ul' outside the loop upon which to append the 'li's
     const $li = $('<li/>', {
       class: 'hobbit',
     }).text(hobbits[i])
     // hint: get 'The-Shire' by using its id
-    $('ul').append($li)
+    $('ul.theShire').append($li)
   }
 };
 
@@ -123,12 +125,23 @@ const keepItSecretKeepItSafe = () => {
 // Chapter 4
 // ============
 const makeBaddies = () => {
-
+  console.log('making baddies');
   // 1. display an unordered list of baddies in Mordor
-
+  const $ul = $("<ul/>", {
+    class: 'mordor'
+  })
+  $('article#Mordor').append($ul);
   // 2. give each of the baddies a class of "baddy"
+  for (let i = 0; i < baddies.length; i++) {
+    const $li = $('<li/>', {
+      class: "baddy"
+    }).text(baddies[i]);
 
-  // 3. remember to append them to Mordor
+
+    // 3. remember to append them to Mordor
+    $('ul.mordor').append($li);
+
+  }
 };
 
 // COMMIT YOUR WORK
