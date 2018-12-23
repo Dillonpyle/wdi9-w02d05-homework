@@ -289,7 +289,7 @@ const weWantsIt = () => {
   // 2. Move the ring from Frodo and give it to Gollum
   $('#gollum').append($('#the-ring'));
   // 3. Move Gollum into Mount Doom
-
+  $('#mount-doom').append($('#gollum'));
 };
 
 // COMMIT YOUR WORK
@@ -301,11 +301,13 @@ const weWantsIt = () => {
 const thereAndBackAgain = () => {
 
   // 1. remove Gollum and the Ring from the DOM
-
+  $('#gollum').remove();
   // 2. remove all the baddies from the DOM
-
+  $('.baddiesGroup').remove();
   // 3. Move all the hobbits back to the shire
-
+  $('.hobbitsArray').append($('.hobbit:contains("Frodo Baggins")'));
+  $('.hobbitsArray').append($('.hobbit:contains("Samwise Gamgee")'));
+  $('#The-Shire').append($('.hobbitsArray'));
 };
 
 // COMMIT YOUR WORK
