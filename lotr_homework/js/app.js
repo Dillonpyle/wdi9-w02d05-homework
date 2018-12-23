@@ -13,7 +13,7 @@ const hobbits = [
 ];
 
 const buddies = [
-  "Gandalf the Grey",
+  "Gandalf",
   "Legolas",
   "Gimli",
   "Strider",
@@ -227,13 +227,16 @@ const forgeTheFellowShip = () => {
 // Chapter 9
 // ============
 const theBalrog = () => {
-
+  console.log('the balrog');
   // 1. change the 'Gandalf' textNode to 'Gandalf the White'
-
+  $('.buddy:contains("Gandalf")').text("Gandalf the White");
   // 2. add a class "the-white" to this element
-
+  $('.buddy:contains("Gandalf the White")').addClass("the-white");
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
-
+  $('.the-white').css({
+    "background-color": 'white',
+    "border": 'gray'
+  });
 };
 
 // COMMIT YOUR WORK
