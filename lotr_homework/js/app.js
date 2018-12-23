@@ -128,7 +128,7 @@ const makeBaddies = () => {
   console.log('making baddies');
   // 1. display an unordered list of baddies in Mordor
   const $ul = $("<ul/>", {
-    class: 'mordor'
+    class: 'baddiesGroup'
   })
   $('article#Mordor').append($ul);
   // 2. give each of the baddies a class of "baddy"
@@ -139,7 +139,7 @@ const makeBaddies = () => {
 
 
     // 3. remember to append them to Mordor
-    $('ul.mordor').append($li);
+    $('ul.baddiesGroup').append($li);
 
   }
 };
@@ -248,11 +248,11 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
-
+  alert('the horn of gondor has been blown')
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+  $('.buddy:contains("Boromir")').css("text-decoration", "line-through");
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
-
+  $('.baddy:contains("The Uruk-hai")').remove();
 };
 
 // COMMIT YOUR WORK
