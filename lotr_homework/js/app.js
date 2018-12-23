@@ -191,9 +191,9 @@ const leaveTheShire = () => {
 // Chapter 7
 // ============
 const beautifulStranger = () => {
-
+  console.log("beautiful stranger");
   // 1. change the buddy 'Strider' textnode to "Aragorn"
-
+  $('.buddy:contains("Strider")').text("Aragorn");
   // hint: You can get a list of elements by tag name, such as 'aside'
 
 };
@@ -205,15 +205,19 @@ const beautifulStranger = () => {
 // Chapter 8
 // ============
 const forgeTheFellowShip = () => {
-
+  console.log("forging the fellowship")
   // 1. create a new div with an id 'the-fellowship'
-
+  const $div = $('<div/>', {
+    id: "the-fellowship"
+  });
   // 2. add an h1 with the text 'The Fellowship' to this new div
-
+  const $h1 = $('<h1/>');
   // 3. append the fellowship to middle-earth
-
+  $('#middle-earth').append($div);
+  $('#the-fellowship').append($h1).text("The Fellowship");
   // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
-
+  $("#the-fellowship").append($('.hobbitsArray'));
+  $("#the-fellowship").append($('#friends'));
 };
 
 // COMMIT YOUR WORK
