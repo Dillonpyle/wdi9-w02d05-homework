@@ -82,7 +82,7 @@ const makeHobbits = () => {
 
   // 1. display an unordered list of the hobbits in the shire.
   const $ul = $("<ul/>", {
-    class: "theShire"
+    class: "hobbitsArray"
   })
   $('article#The-Shire').append($ul);
   // 2. give each hobbit a class of "hobbit"
@@ -92,7 +92,7 @@ const makeHobbits = () => {
       class: 'hobbit',
     }).text(hobbits[i])
     // hint: get 'The-Shire' by using its id
-    $('ul.theShire').append($li)
+    $('ul.hobbitsArray').append($li)
   }
 };
 
@@ -177,9 +177,9 @@ const makeBuddies = () => {
 // Chapter 6
 // ============
 const leaveTheShire = () => {
-
+  console.log('leaving shire');
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
-
+  $("#Rivendell").append($('.hobbitsArray'));
   // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
 
 };
